@@ -1,7 +1,7 @@
 data/clean
 output/
-!data/clean/.gitignore
-!output/.gitignore
+!data/clean/.gitkeep
+!output/.gitkeep
 *.pdf
 *.html
 *_files/
