@@ -1,8 +1,18 @@
-analysis:
-	Rscript 01-load_clean.R
-	Rscript 02-eda.R
-	Rscript 03-model.R
-	Rscript 04-analyze.R
+data/clean/titanic_clean.csv: 01-load_clean.R
+	Rscript 01-load_clean.R --file_path=data/original/titanic.csv --output_path=data/clean/titanic_clean.csv
 
-download:
-	Rscript 01-load_clean.R
+output/model.RDS: 03-model.R data/clean/titanic_clean.csv
+	Rscript 03-model.R --file_path=data/clean/titanic_clean.csv --output_path=output/model.RDS
+
+output/coef.csv output/fig.png: 04-analyze.R output/model.RDS
+	Rscript 04-analyze.R --model=output/model.RDS --output_coef=output/coef.csv --output_fig=output/fig.png
+
+index.html: report.qmd output/coef.csv output/fig.png
+	quarto render report.qmd --output index.html
+
+.PHONY: clean
+clean:
+	rm -f output/*
+	rm -f data/clean/*
+	rm -f index.html
+	rm -f *.pdf

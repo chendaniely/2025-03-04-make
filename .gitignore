@@ -1,3 +1,10 @@
+Rplots.pdf
+data/
+!data/.gitkeep
+output/
+!output/.gitkeep
+index.html
+
 # History files
 .Rhistory
 .Rapp.history

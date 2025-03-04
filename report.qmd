@@ -1,0 +1,13 @@
+---
+title: my super cool report
+format:
+  html:
+    embed-resources: true
+
+---
+
+Some introductory text
+
+## Results
+
+![](output/fig.png)
