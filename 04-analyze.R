@@ -1,7 +1,14 @@
 library(readr)
 library(ggplot2)
+library(docopt)
 
-model <- read_rds("output/model.RDS")
+"
+Usage: 04-model.R --model=<model> --output_coef=<output_coef> --output_fig=<output_fig>
+" -> doc
+
+opt <- docopt(doc)
+
+model <- read_rds(opt$model)
 
 summary(model)
 
@@ -17,6 +24,8 @@ coef <- coef |>
 
 coef
 
+write_csv(coef, opt$output_coef)
+
 # plot results
 
 
@@ -24,3 +33,5 @@ ggplot(coef |> dplyr::filter(term != "(Intercept)"), aes(x = term, y = or)) +
   geom_point() +
   coord_flip() +
   geom_hline(yintercept = 1)
+
+ggsave(opt$output_fig)
