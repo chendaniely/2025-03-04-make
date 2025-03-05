@@ -1,0 +1,42 @@
+  569  Rscript 01-load_clean.R
+  570  Rscript 01-load_clean.R
+  571  Rscript 01-load_clean.R --file_path=data/original/titanic.csv --output_path=data/clean/titanic_clean.csv
+  572  Rscript 01-load_clean.R --file_path=data/original/titanic.csv --output_path=data/clean/titanic_clean.csv
+  573  Rscript 03-model.R --file_path=data/clean/titanic_clean.csv --output_path=output/model.RDS
+  574  Rscript 04-analyze.R --model=output/model.RDS --output_coef=output/coef.csv --output_fig=output/fig.png
+  575  Rscript 04-analyze.R --model=output/model.RDS --output_coef=output/coef.csv --output_fig=output/fig.png
+  576  quarto render report.qmd
+  577  git status
+  578  git status
+  579  git add .
+  580  git status
+  581  git commit -m "convert scripts into cmdline scripts"
+  582  git push origin main
+  583  git status
+  584  gits tatus
+  585  git status
+  586  git commit -am ".gitkeep"
+  587  git push origin main
+  588  make data/clean/titanic_clean.csv
+  589  make data/clean/titanic_clean.csv
+  590  touch data/original/titanic.csv
+  591  make data/clean/titanic_clean.csv
+  592  make output/model.RDS
+  593  touch 03-model.R
+  594  make output/model.RDS
+  595  make output/model.RDS
+  596  make index.html
+  597  touch 01-load_clean.R
+  598  make index.html
+  599  make index.html
+  600  make clean
+  601  make index.html
+  602  make index.html
+  603  git add -f index.html
+  604  git commit -m "homepage!"
+  605  git push origin main
+  606  git status
+  607  git diff
+  608  git commit -am "makefile and embed index.html"
+  609  git push origin main
+  610  history > history.txt
